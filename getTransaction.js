@@ -2,7 +2,7 @@
 * @Author: Mr.Sofar
 * @Date:   2018-05-17 16:49:23
 * @Last Modified by:   Mr.Sofar
-* @Last Modified time: 2018-05-17 21:03:31
+* @Last Modified time: 2018-05-17 22:18:14
 * 1、检索当前数据库是否存在数据
 * 		true: 检索最大值
 * 	 	false: 直接开始检索
@@ -56,7 +56,7 @@ function getBDMaxBlockNumber(){
 			if(data.length>0){
 				DB.block.aggregate([{"$group":{"_id":{},"blockNumber":{"$max":"$blockNumber"}}}])
 					.then(data1 => {
-						currentBlockNumber = data1[0].blockNumber+1
+						currentBlockNumber = data1[0].blockNumber
 						console.log("从区块高度 " + currentBlockNumber + " 开始检索");
 						getTransactionTxid();
 					})
