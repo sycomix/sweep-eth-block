@@ -2,7 +2,7 @@
 * @Author: Mr.Sofar
 * @Date:   2018-05-17 19:36:47
 * @Last Modified by:   Mr.Sofar
-* @Last Modified time: 2018-05-17 21:15:58
+* @Last Modified time: 2018-05-18 11:26:25
 */
 var axios = require("axios");
 var config = require('./config');
@@ -41,7 +41,7 @@ function queryUGCTxid(){
 								}
 								if(data[0].transactions.length-1 === i){
 									currentBlockNumber ++;
-									queryUGCTxid();
+									setTimeout(queryUGCTxid,3000);
 								}
 							})
 							.catch(err => {

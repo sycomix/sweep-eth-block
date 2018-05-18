@@ -4,7 +4,8 @@ mongoose.connect('mongodb://localhost:27017/block');
 mongoose.connection.on("connected",function(){
 	console.log("链接数据库成功");
 })
-mongoose.connection.on("error",function(){
+mongoose.connection.on("error",function(err){
+	console.log(err);
 	console.log("链接数据库失败");
 })
 mongoose.connection.on("disconnected",function(){
