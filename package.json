@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "mongoose": "^4.10.4"
+    "mongoose": "^4.10.4",
+    "nodemailer": "^4.6.4",
+    "nodemailer-smtp-transport": "^2.7.4"
   }
 }
